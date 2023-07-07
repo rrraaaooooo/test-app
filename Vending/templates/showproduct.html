@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCT</title>
+    <style>
+        table {
+        
+           width:50%;
+          border-collapse: collapse;
+          border: 1px solid black;
+        } 
+        
+        th,td {
+          border: 1px solid black;
+          text-align: center;
+        }
+        
+        table.a {
+          table-layout: auto;
+          width: 180px;  
+        }
+        table,th,td
+  {
+    border:2px solid rgb(0, 0, 0);
+    color:rgb(0, 51, 0);
+  }
+  
+  th
+  {
+    background-color: rgb(102, 204, 255);
+  }
+  td
+  {
+    height:40px;
+  }
+  td:nth-child(1)
+  {
+    background-color: rgba(241, 245, 3, 0.685);
+  }
+  td:nth-child(2)
+  {
+    background-color: rgba(235, 9, 216, 0.425);
+  }
+  td:nth-child(3)
+  {
+    background-color: hsla(199, 98%, 47%, 0.521);
+  }
+  button {
+
+
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #0ae942c0;
+  color: rgb(240, 6, 228);
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: black;
+  border-color: red ;
+  border-width : 10px;
+  color: red;
+  padding: 10px 40px;
+  text-decoration: none;
+  margin: 20px 500px;
+  cursor: pointer;
+  
+}
+        </style>    
+</head>
+<body>
+  <form action ="" method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+          <th>PRODUCT</th>
+          <th>PRICE</th>
+          <th>IN STOCK</th>
+          <th></th>
+      </tr> 
+      {%for product in products%}
+                  <td>{{product.item_name}}</td>
+                  <td>{{product.item_price}}</td>
+                  <td>{{product.item_in_stock}}</td>
+                  <td><input type="number" name="{{product.item_name}}" min="0" max="{{product.item_in_stock}}" value=0 ></td>
+              </tr>
+       {%endfor%}       
+      </table>
+      <input type="submit" value="Submit">
+    </form>   
+      
+</body>
+</html>

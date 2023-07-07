@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund</title>
+    <style>
+        table {
+          border-collapse: collapse;
+          border: 1px solid black;
+        } 
+        
+        th,td {
+          border: 1px solid black;
+        }
+        </style>
+</head>
+<body>
+    <h1>Your Amount is :- {{object_transaction.amount}}</h1>
+    {% comment %} <h3>{{object_transaction.amount}}</h3> {% endcomment %}
+    <h2>Refunded<h2>
+      <form action ="" method="post">
+        {% csrf_token %} 
+        <input type="submit" value="Go To Main Menu">
+      </form>
+
+    
+</body>
+</html>

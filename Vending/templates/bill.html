@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BILL</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        border: 1px solid black;
+      } 
+      
+      th,td {
+        border: 1px solid black;
+      }
+      </style>
+</head>
+<body>
+    <h1>Thank You For shopping </h1>
+    <table>
+        <tr>
+          <th>ITEM NAME </th>
+          <th>ITEM QUANTITY </th>
+          <th>TOTAL </th>
+        </tr>
+        {%for i in object_order%}
+        <tr>
+            <td>{{i.product_id}}</td>
+            <td>{{i.quantity}}</td>
+            <td>Rs {{i.price}}/-</td>
+            </td>
+          </tr>
+          {%endfor%}  
+          <tr>
+            <td></td>
+            <td>Total Amount</td>
+            <td>Rs {{object_transaction.cost_of_product}}/-</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Return Amount</td>
+            <td>Rs {{return_amount}}/-</td>
+          </tr>
+    </table>
+    <form action ="" method="post">
+      {% csrf_token %} 
+      <input type="submit" value="Go To Main Menu">
+    </form>
+</body>
+</html>                                                                                   

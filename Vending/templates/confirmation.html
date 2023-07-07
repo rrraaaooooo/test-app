@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Confirmation</title>
+    <style>
+        table {
+          border-collapse: collapse;
+          border: 1px solid black;
+        } 
+        
+        th,td {
+          border: 1px solid black;
+        }
+    td:nth-child(1)
+  {
+    background-color: rgba(241, 245, 3, 0.685);
+  }
+  td:nth-child(3)
+  {
+    background-color: rgba(241, 245, 3, 0.685);
+  }
+  </style>
+</head>
+<body>
+    <h2>Please Check The Details  </h2>
+    <tr>
+      <td>Your Orders</td>
+    </tr>
+    <table>
+      
+    
+        {%for i in object_order%}
+      <tr> 
+        <td>{{i.product_id}}</td>
+        <td>{{i.quantity}}</td>
+      </tr>
+        {%endfor%}  
+     
+      
+    </table> 
+    <br>
+    <table>
+      <tr> 
+        <td>Your Products Cost is :- </td>
+        <td>Rs {{object_transaction.cost_of_product}}</td>
+      </tr>
+      <tr> 
+        <td>Your Insert Amount is :- </td>
+        <td>Rs {{object_transaction.amount}}</td>
+      </tr>
+    </table>
+    <form action ="" method="post">
+      {% csrf_token %} 
+      
+      <p>Confirm your Order</p>
+      <input type="radio" id="yes" name="choice" value="yes">
+      <label for="YES">YES</label>
+      <input type="radio" id="no" name="choice" value="no">
+      <label for="NO">NO</label><br>
+
+   <br></br>
+    <input type="submit" value="Submit">
+  </form>
+            <script>
+              window.history.forward();
+           </script>
+        </tr>     
+      </table>
+</body>
+</html> 

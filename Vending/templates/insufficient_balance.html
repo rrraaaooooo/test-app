@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insufficient balance</title>
+    <style>
+      body
+      {
+        font-family: "Open Sans";
+      }
+      #wrapper
+      {
+        border: 1px solid #888;
+        display: inline-block;
+        padding:20px;
+        
+      }
+        </style>
+</head>
+<body>
+  <form action ="" method="post">
+    {% csrf_token %} 
+    <h1>Insufficient Balance</h1>
+    <p>You Want Insert More Coin Or  Refund Your Money</p>
+  <input type="radio" id="insert" name="choice" value="insert">
+  <label for="INSERT">INSERT MORE COIN</label><br>
+  <input type="radio" id="refund" name="choice" value="refund">
+  <label for="REFUND">REFUND</label>
+
+ <br></br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>

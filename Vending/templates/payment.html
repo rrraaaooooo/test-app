@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>PAYMENT PANNEL</h1>
+
+<form action ="" method="post">
+  {% csrf_token %} 
+  <label for="RUPEES">Which Coins You Want to Insert  and How Much:</label>
+  <br><br>
+  <label for="coin">How Much Rs 1 Coin you want to insert:</label>
+  <input type="number" id="1coin" name="1coin" min="0" value=0>
+  <br><br>
+  <label for="coin">How Much Rs 5s Coin you want to insert:</label>
+  <input type="number" id="5coin" name="5coin" min="0" value=0>
+  <br><br>
+  <label for="coin">How Much Rs 10 Coin you want to insert:</label>
+  <input type="number" id="10coin" name="10coin" min="0" value=0>
+  <br><br>
+  <label for="coin">How Much Rs 25 Coin you want to insert:</label>
+  <input type="number" id="25coin" name="25coin"  min="0" value=0>
+  <br><br>
+
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
